@@ -1,0 +1,214 @@
+#Week 1
+ Introduction to Programming
+ Introduction to Python
+ Hello World
+ 
+- If syntax error, pay close attention to your code
+  If the syntax is correct but the behaviour or output unexpected, the semantics are mistake
+  
+- Create Variables, control the flow program, read the input, and display the output
+
+- keywords, function
+
+
+#Week 2
+ Expressions and Variables
+ Functions
+ Conditionals
+
+- type() , str() , len() ,
+
+- def name_function(parameter):
+    ...
+
+- def if_positive(number):
+    if number > 0:
+      return True
+    return False
+    
+- def valid_age(age_prtcpnt):
+    if age_prtcpnt < 18:
+      return print("You are not Eligible")
+    elif age_prtcpnt > 35:
+      return print("You are not Eligible")
+    else:
+      return print("Let's Continue")
+
+- "None" data type
+
+- Logical operator (and, or, not)
+
+
+#Week 3 (Three techniques for automation task repetitive)
+ While Loops = Instruct your computer to continuously execute your code based on the value of a condition
+               Use "while loops" when you want to repeat an action until a condition changes
+ 
+- x = 0                                           >> initializing
+  while x < 5:                                    >> comparison
+    print("Not there yet, x = " + str(x))
+    x = x + 1                                     >> increment the value
+  print("x = " + str(x))
+
+
+- username = get_username()
+  while not valid_username(username)
+    print("Invalid Username")
+    username = get_username()
+
+- while True:
+    doing_user_request()
+    if user_stop_request():
+      break
+
+
+ For Loops = Iterate over a sequence of values.
+             In Python and other programming languages, a range of number will start with the value of 0 (zero) by default.
+             The list of numbers generated will be one less than the given value.
+             Use "For Loops" when there's a sequence of elements that you want to iterate
+             
+- for x in range(5):
+    print(x)
+    
+- friends = ['Aziz', 'Amin', 'Anang']
+  for friend in friends:
+    print("Hi, " + friend)
+
+
+- def square(n):
+    return n*n
+    
+  def sum_square(x):
+    sum = 0
+    for n in range(x):
+      sum += square(n)
+    return sum
+
+
+- def triangle_area(x,y):
+    return (x*y)
+    
+  def init_num(end_num):
+    sum = 0
+    for x in range(1, end_num):
+      y = x + 2
+      sum += triangle_area(x,y)
+      print(sum)
+      
+      
+- for left in range(7):
+    for right in range(left, 7):
+      print("[" + str(left) + "|" + str(right) + "]", end=" ")     >> used END parameter to print something else instead of the newline
+    print()
+    
+
+- club = ["MU", "MC", "LIV", "CHE"]
+  for home_team in teams:
+    for away_team in teams:
+      if home_team != away_team:
+        print(home_team + " VS " + away_team)
+ 
+ 
+ Recursion = The repeated application of the same procedure to a smaller problem
+             Tackle the complex problem by reducing problem to a simpler one
+             Recursion is a way of doing a repetitive task by having a function call itself
+             A recursive function call itself usually with a modified parameter until a reaches a specific condition (base case)
+
+- def factorial(n)
+    if n < 2:                                  >> base case
+      return 1
+    return n * factorial(n-1)                  >> recursive case
+
+
+- def sum_positive_num(num):
+    print("Called Number" + str(num))
+    if n < 1:
+      print("Returning 0")
+      return 0
+    result = num + sum_positive_num(num-1)
+    print("Returning " + str(result) + " , for the sum of " + str(num))
+    return result
+
+ 
+ 
+#Week 4
+ Strings = immutable
+           METHOD is a function associated with a specific class
+
+- upper(), lower(), strip(), endswith(), isnumeric(), int(), join(), count(), split(), format()
+
+- "mountain".upper()
+  "USER".lower()
+  " yes ".strip()                              #'yes'
+  " no ".lstrip()                              #'no '
+  " no ".rstrip()                              #' no'
+  "Forest".endswith("rest")                    #True
+  "123456".isnumeric()                         #True
+  int("12345") + int("54321")                  #66666
+  " ".join(["This", "is", "join", "method"])   #"This is jon method"
+  "Robby Kamil Siregar".split()                #['Robby', 'Kamil', 'Siregar']
+  "You might be wondering about how many substring from one of the letter".count("e")
+
+
+- name = "Kamil"
+  print(name[2])                                               >> indexing
+   
+- mystring = "This is the string with many characters"
+  print(mystring[-1])
+
+- def first_and_last(message):
+    if message == "":
+      return True
+    elif message[0] == message[-1]:
+      return True
+    return False
+    
+- fruit = "Pineapple"                                          >> slicing
+  print(fruit[2:5]) #nea
+  print(fruit[:4]) #Pine
+  print(fruit[4:]) #apple
+  
+- sports = "basket & football"
+  sports.index("&")              #7                            >> find the substring
+  "futsal" in sports             #that return false
+
+- def replace_domain(email, old_domain, new_domain):
+    if "@" + old_domain in email:
+      index = email.index("@" + old_domain)
+      new_email = email[:index] + "@" + new_domain
+      return new_email
+    return email
+    
+
+- def initials(thing):
+    words = thing.split()
+    name = ""
+    for word in words:
+      name += word[:1].upper()
+    return name
+  
+    
+- name = "Aan"                                                 
+  age = 20
+  print("Are you {age} years old, {name}?".format(name=name, age=str(age)))
+  
+  
+- price = 7.5
+  with_tax = price * 1.09
+  print("Base price: ${:.2f}. with tax: ${:.2f}",format(price, with_tax))     >> formating indexing
+  
+  
+- def to_celcius(x):
+    return (x-32)*5/9
+    
+  for x in range(0,101,10):
+    print("{:>3} F | {"{:>6.2f} C".format(x,to_celcius(x)))                   >> formating - use the greater than operator to align text
+  
+ 
+ Lists
+ Dictionaries
+#Week 5
+ Object-oriented Programming
+ Classes and Methods
+ Code Reuse
+#Week 6
+ Writing a Script from the Ground Up
