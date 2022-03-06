@@ -11,9 +11,9 @@ def create_email(name):
         return email_employee.lower()
     return name
 
-month = int(input("Enter month of registration: "))
-years = int(input("Enter years of registration: "))
-time = str(input("Enter time of registration: "))
+month = int(input("Enter month of registration: ")) #input: 01, 02, ..
+years = int(input("Enter years of registration: ")) #input: 21-->2021, 22-->2022, ..
+time = str(input("Enter time of registration: "))   #input: 10:11:12
 name = str(input("Name: "))
 
 print(f"\n\nThe Insight Employee of {name}\n")
