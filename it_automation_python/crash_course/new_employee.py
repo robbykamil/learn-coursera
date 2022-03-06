@@ -10,3 +10,11 @@ def create_email(name):
         email_employee = spliting_name[0] + "." + spliting_name[1] + "@thecompany.com"
         return email_employee.lower()
     return name
+
+month = int(input("Enter month of registration: "))
+years = int(input("Enter years of registration: "))
+time = str(input("Enter time of registration: "))
+name = str(input("Name: "))
+
+print(f"\n\nThe Insight Employee of {name}\n")
+print(f"ID   : {create_id(month, years, time)}\nName : {name}\nEmail : {create_email(name)}")
