@@ -1,7 +1,7 @@
 # this code is used for creating id and email for the new employee
 
 def create_id(month, years, time):
-    id_employee = month + years + time[:2] + time[3:5]
+    id_employee = month + years + int(time[:2]) + int(time[3:5])
     return id_employee
 
 def create_email(name):
